@@ -13,6 +13,7 @@ Template Name: Páginas Gerais
 
 			<div class="conteudo">
 				<div class="container">
+					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<?php 
 							// Se houver algum post
 							if(have_posts()) :
@@ -20,7 +21,6 @@ Template Name: Páginas Gerais
 								while (have_posts()) : the_post();
 						?>
 							<h1><?php the_title(); ?></h1>
-							<p>Autor: <?php the_author(); ?></p>
 							<p><?php the_content(); ?></p>
 						<?php 
 						endwhile;
@@ -29,7 +29,8 @@ Template Name: Páginas Gerais
 							<p>Nao tem nada ainda pra mostrar</p>
 						<?php 
 						endif;
-						?>					
+						?>	
+					</div>				
 
 				</div>
 			</div>

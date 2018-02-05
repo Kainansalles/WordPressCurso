@@ -8,7 +8,7 @@
 			<div class="container">
 				<div class="row">
 
-					<div class="noticias col-md-9">
+					<div class="blog col-md-9">
 						<?php 
 							// Se houver algum post
 							if(have_posts()) :
@@ -20,12 +20,28 @@
 
 						<?php 
 						endwhile;
-						else:
-						 ?>
-							<p>Nao tem nada ainda pra mostrar</p>
-						<?php 
-						endif;
+
 						?>
+
+						<div class="row">
+
+							<div class="paginacao col-md-6 col-sm-6 col-xs-6 text-left">
+								<?php next_posts_link("<< Mais antigos") ?>
+							</div>
+
+							<div class="paginacao col-md-6 col-sm-6 col-xs-6 text-right">
+								<?php previous_posts_link("Mais novos >>"); ?>
+							</div>						
+
+							<?php
+							else:
+							 ?>
+								<p>Nao tem nada ainda pra mostrar</p>
+							<?php 
+							endif;
+							?>
+
+						</div>
 
 					</div>
 					<aside class="barra-lateral col-md-3">

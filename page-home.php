@@ -2,18 +2,56 @@
 <div class="conteudo">
 	<main>
 		<section class="slide">
-			<div class="container">Slide</div>
+			<?php motoPressSlider( "home-slider" ) ?>
 		</section>
 		<section class="servicos">
-			<div class="container">Serviços</div>
+			<div class="container">
+				<h1>Serviços</h1>
+				<div class="row">
+					<div class="col-md-4 col-sm-4 col-xs-12">
+						<div class="servicos-item">
+							<div class="servicos-img">
+								<img src="<?php echo wp_get_attachment_url(get_theme_mod('set_servicos1')); ?>" alt="">
+							</div>
+							<div class="servicos-desc">
+								<h2><?php echo get_theme_mod('set_servicos1_titulo') ?></h2>
+								<p><?php echo get_theme_mod('set_servicos1_descricao') ?></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-12">
+						<div class="servicos-item">
+							<div class="servicos-img">
+								<img src="<?php echo wp_get_attachment_url(get_theme_mod('set_servicos2')); ?>" alt="">
+							</div>
+							<div class="servicos-desc">
+								<h2><?php echo get_theme_mod('set_servicos2_titulo') ?></h2>
+								<p><?php echo get_theme_mod('set_servicos2_descricao') ?></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-12">
+						<div class="servicos-item">
+							<div class="servicos-img">
+								<img src="<?php echo wp_get_attachment_url(get_theme_mod('set_servicos3')); ?>" alt="">
+							</div>
+							<div class="servicos-desc">
+								<h2><?php echo get_theme_mod('set_servicos3_titulo') ?></h2>
+								<p><?php echo get_theme_mod('set_servicos3_descricao') ?></p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
 		</section>
 		<section class="meio">
 			<div class="container">
 				<div class="row">
-					<aside class="barra-lateral col-md-3">
+					<aside class="barra-lateral col-md-4">
 						<?php get_sidebar('home'); ?>
 					</aside>
-					<div class="noticias col-md-9">
+					<div class="noticias col-md-8">
 						<div class="row">
 						<?php 
 
@@ -29,7 +67,7 @@
                         			$op_content = 'destaque';
 
                         			// Quais categorias serão inclusas na nossa listagem?
-						$itens = get_categories(array('include' => '3,5,4'));
+						$itens = get_categories(array('include' => '6,7,8'));
 
 						// echo '<pre>';
 						// print_r($itens);
@@ -84,7 +122,10 @@
 			</div>
 		</section>
 		<section class="mapa">
-			<div class="container">Mapa</div>
+			<div class="ondeestamos">
+				<h1>Onde estamos?</h1>
+			</div>
+			<?php gmwd_map( 1, 1); ?>
 		</section>
 	</main>	
 </div>
